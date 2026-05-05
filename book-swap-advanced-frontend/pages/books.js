@@ -1,9 +1,18 @@
+import BookCard from "../components/BookCard";
+import Navbar from "../components/Navbar";
+
 export default function Books() {
+  const books = [
+    { title: "Atomic Habits", author: "James Clear", status: "Available" }
+  ];
+
   return (
-    <div className="container">
+    <div>
+      <Navbar />
       <h2>My Books</h2>
-      <div className="card">Book 1 - Available</div>
-      <div className="card">Book 2 - Lent</div>
+      {books.map((b, i) => (
+        <BookCard key={i} book={b} />
+      ))}
     </div>
   );
 }
